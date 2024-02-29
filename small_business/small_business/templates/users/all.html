@@ -1,0 +1,31 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <div class="card text-white bg-secondary my-4 py-2 text-center">
+
+        <div class="card-body"><p class="text-white m-0">Acestia sunt toti userii activi din aplicatie! </p>
+        </div>
+
+        <div class="card-body">
+            <a class="btn btn-primary btn-sm" href="{% url 'users-add' %}">Create new user</a>
+        </div>
+
+    </div>
+    <div class="row gx-4 gx-lg-5">
+
+        {% for user in object_list %}
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ user.first_name }} - {{ user.second_name }}</h2>
+                        <h2 class="card-text">{{ user.phone }}</h2>
+                        <p class="card-text">{{ user.email }}</p>
+                        <p class="card-text">{{ user.gen }}</p>
+                    </div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm"
+                                                href="{% url 'users-detail' user.id %}">More Info</a></div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
