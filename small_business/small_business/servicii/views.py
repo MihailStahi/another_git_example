@@ -9,7 +9,7 @@ from servicii.models import ServiciiModel
 
 class ServiciiDetailView(DetailView):
     template_name = 'servicii/detalii.html'
-    model = ServiciiModel  #Select * from ServiciiModel where pk is id
+    model = ServiciiModel  #Select * from ServiciiModel where pk is id545
 
 class ServiciiListView(ListView):
     template_name = 'servicii/all.html'
